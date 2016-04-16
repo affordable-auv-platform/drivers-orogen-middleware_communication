@@ -1,0 +1,10 @@
+<package>
+    <description brief="Middleware communication">
+    This make the interface with the actuators and the sensors connected to the middleware of the platform. It create the ports for the system interaction
+    </description>
+    <author>Geovane Mimoso/geovanemimoso@gmail.com</author>
+    <license>LGPLv3</license>
+    <url>https://github.com/affordable-auv-platform</url>
+    <depend package="base/cmake" />
+    <depend package="drivers/iodrivers_base" />
+</package>

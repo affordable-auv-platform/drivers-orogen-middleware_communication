@@ -1,0 +1,25 @@
+name "middleware_communication"
+
+using_library 'iodrivers_base'
+import_types_from "middleware_communicationTypes.hpp"
+import_types_from "base"
+
+task_context "Task" do
+    needs_configuration
+
+    property("device", "string" ,"serial:///dev/ttyUSB0:115200")
+
+    property('timeout', 'double', 5.0)
+
+    property('motor_names', '/std/vector<std/string>')
+
+    input_port("motor_inputs", "base/commands/Joints")
+
+    output_port('imu_sensors_samples', '/base/samples/IMUSensors')
+
+    output_port('temperature_samples', '/base/Temperature')
+
+    output_port("pressure_bar_samples", "double")
+
+    periodic 0.2
+end
